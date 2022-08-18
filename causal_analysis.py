@@ -67,7 +67,7 @@ def create_data_frames(data, continuous_features, categorical_features, treatmen
         trimmed_data_frames = {}
         for labels_pair in data_frames.keys():
             label_1, label_2 = labels_pair
-            trimmed_data = trim_common_support_2_labels(data_frames[labels_pair], label_1, label_2)
+            trimmed_data = pairwise_trim_common_support(data_frames[labels_pair], label_1, label_2)
             trimmed_data_frames[labels_pair] = trimmed_data.copy(deep=True)
         return trimmed_data_frames
     else:
@@ -91,7 +91,7 @@ def pairwise_logistic_regression(data, continuous_features, categorical_features
     return data_frames
 
 
-def trim_common_support_2_labels(data, label_1, label_2):
+def pairwise_trim_common_support(data, label_1, label_2):
     label_1_data = data[data['score'] == label_1]
     label_1_bounds = (
         label_1_data[f'propensity_class_{label_1}'].min(), label_1_data[f'propensity_class_{label_1}'].max())
@@ -260,7 +260,7 @@ def main():
     bins = 2
     original_data, genres, months = preprocess('processed_data.csv', bins, get_dummies=True)
     labels_combinations = [(1, 0)]
-    bootstrap = 300
+    bootstrap = 100
     results_s_learner = {k: [] for k in labels_combinations}
     results_t_learner = {k: [] for k in labels_combinations}
     results_ipw = {k: [] for k in labels_combinations}
