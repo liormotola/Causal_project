@@ -1,0 +1,335 @@
+release_date,budget,review_score,is_top_production_company,known_actors,runtime,revenue,known_directors,popularity,title,genres
+2013-10-18,20000000,9.151190476190477,True,0,134.0,187000000,False,30.316249,12 years a slave,Drama/History
+2010-11-05,18000000,8.507352941176471,True,0,94.0,35692920,True,11.176797,127 hours,Adventure/Drama/Thriller
+2014-04-18,5000000,5.59,False,0,93.0,13809,False,9.067788,13 sins,Horror/Thriller
+2013-08-02,61000000,6.0,True,1,109.0,131940411,False,13.336512,2 guns,Action/Comedy/Crime
+2014-06-05,50000000,7.269230769230769,True,0,112.0,188441614,False,10.901496,22 jump street,Crime/Comedy/Action
+2011-08-11,28000000,6.519230769230769,True,1,83.0,40547440,False,9.763493,30 minutes or less,Action/Adventure/Comedy
+2015-09-11,5000000,6.25,False,0,121.0,4842699,False,4.222496,90 minutes in heaven,Drama
+2011-06-24,10000000,7.125,False,0,98.0,1759252,False,3.033797,a better life,Drama
+2013-01-11,2500000,1.4166666666666667,False,0,86.0,60141683,False,6.531373,a haunted house,Comedy/Horror
+2016-04-22,30000000,6.54,False,1,97.0,4212494,False,9.104543,a hologram for the king,Comedy/Drama
+2014-12-30,20000000,7.95,False,0,125.0,12007070,False,17.187708,a most violent year,Crime/Drama/Thriller
+2014-07-25,15000000,7.1726190476190474,False,0,121.0,31554855,False,10.432407,a most wanted man,Thriller
+2013-11-01,5000000,7.5,True,0,95.0,388,False,1.740242,a perfect man,Drama
+2014-09-18,28000000,6.003846153846154,True,1,113.0,53181600,False,14.914924,a walk among the tombstones,Crime/Drama/Mystery/Thriller
+2014-02-14,12500000,6.583333333333333,True,0,100.0,49002684,False,9.543004,about last night,Comedy/Romance
+2012-02-24,12000000,4.709677419354839,False,0,110.0,81272766,False,12.159818,act of valor,Action/Thriller/War
+2013-03-21,13000000,5.975,False,0,107.0,18000000,False,10.098539,admission,Comedy/Drama/Romance
+2013-05-30,130000000,6.7,True,0,100.0,243843127,False,10.747642,after earth,Science Fiction/Action/Adventure
+2010-03-03,200000000,6.171875,True,1,108.0,1025491110,True,17.285093,alice in wonderland,Family/Fantasy/Adventure
+2010-09-17,20000000,4.2,True,0,88.0,39300000,False,8.16645,alpha and omega,Family/Animation
+2013-12-12,40000000,7.921739130434782,True,1,138.0,251171807,False,16.478036,american hustle,Drama/Crime
+2015-08-19,28000000,6.09375,True,0,96.0,27139524,False,9.534828,american ultra,Comedy/Action
+2014-10-02,6500000,4.666666666666667,False,0,99.0,255273813,False,23.242452,annabelle,Horror
+2011-07-22,100000,6.428571428571429,True,0,92.0,1776935,False,8.957372,another earth,Drama/Science Fiction
+2011-11-18,4000000,5.520833333333333,False,0,119.0,355688,False,3.496577,another happy day,Comedy/Drama
+2016-08-12,9000000,6.723684210526316,False,0,120.0,4600000,False,8.475983,anthropoid,History/Thriller/War
+2012-09-14,12000000,7.03030303030303,False,0,100.0,35485056,False,5.808496,arbitrage,Drama/Thriller
+2011-04-08,40000000,6.0,True,0,110.0,45735397,False,9.698075,arthur,Comedy/Romance
+2013-09-27,8500000,3.957142857142857,True,0,96.0,22456509,False,5.590678,baggage claim,Comedy
+2013-09-20,20000000,3.985294117647059,True,0,110.0,16549477,False,5.0739,battle of the year,Music/Drama
+2012-06-27,1800000,8.676470588235293,True,0,93.0,21107746,False,5.550496,beasts of the southern wild,Drama/Fantasy
+2013-02-13,60000000,6.25,True,0,124.0,60052138,False,20.485203,beautiful creatures,Fantasy/Drama/Romance
+2010-04-23,250000,6.275,False,0,97.0,23859,False,0.386717,behind the burly q,Documentary
+2013-05-26,23000000,7.903846153846154,False,1,118.0,15600000,True,7.339451,behind the candelabra,Drama/Romance
+2014-03-14,5000000,5.175,False,0,91.0,75143,False,7.392294,better living through chemistry,Drama/Comedy
+2014-12-24,10000000,6.537878787878788,False,1,105.0,28883511,True,7.412826,big eyes,Drama
+2014-10-24,165000000,8.0,True,0,102.0,652105443,False,213.849907,big hero 6,Adventure/Family/Animation/Action/Comedy
+2012-02-02,40000000,6.666666666666667,True,0,107.0,24719215,False,6.159379,big miracle,Adventure/Drama/Romance
+2013-11-27,17500000,5.788095238095238,True,0,93.0,7018189,False,5.346121,black nativity,Drama/Music
+2016-11-04,6000000,5.8125,False,0,116.0,6174491,False,7.873407,bleed for this,Drama
+2014-05-21,40000000,4.5,True,1,117.0,123494610,False,10.395472,blended,Comedy
+2013-07-25,18000000,7.9772727272727275,True,0,98.0,99206215,True,12.61244,blue jasmine,Comedy/Drama
+2010-12-27,3500000,8.054347826086957,False,0,112.0,16566240,False,11.107914,blue valentine,Drama/Romance
+2015-10-15,40000000,7.953703703703703,False,1,141.0,165478348,True,13.707888,bridge of spies,Thriller/Drama
+2013-01-18,56000000,4.925,True,1,109.0,19701164,False,12.136158,broken city,Thriller/Crime/Drama
+2015-10-20,11000000,8.116666666666667,True,0,111.0,62076141,False,7.991613,brooklyn,Drama/Romance
+2013-01-31,55000000,5.053571428571429,True,1,92.0,9489829,False,8.26008,bullet to the head,Action/Crime/Thriller
+2010-09-24,1987650,7.555555555555555,True,0,94.0,19152480,False,7.389437,buried,Drama/Thriller/Mystery
+2010-11-23,55000000,3.75,False,0,119.0,89519773,False,9.276539,burlesque,Drama/Romance
+2013-10-10,55000000,8.606666666666666,True,0,134.0,95000000,True,13.776068,captain phillips,Action/Drama/Thriller
+2015-11-20,11800000,8.774193548387096,False,0,118.0,40272135,False,8.364201,carol,Romance/Drama
+2013-10-16,30000000,8.9375,True,0,100.0,82394288,False,18.399055,carrie,Drama/Horror
+2013-10-11,5000000,3.37,False,0,101.0,40400,False,3.711772,cbgb,Drama/Music
+2012-02-01,15000000,8.0,True,0,84.0,145000000,False,12.47441,chronicle,Science Fiction/Drama/Thriller
+2015-03-12,95000000,9.0,True,0,105.0,543514353,False,19.801128,cinderella,Romance/Fantasy/Family/Drama
+2010-04-01,125000000,5.0,True,1,106.0,232713139,False,11.972347,clash of the titans,Adventure/Fantasy/Action
+2011-08-17,90000000,5.0,True,0,113.0,48795021,False,10.949076,conan the barbarian,Adventure/Fantasy/Action
+2010-02-26,30000000,3.8448275862068964,True,1,107.0,55583804,True,14.313079,cop out,Action/Comedy/Crime
+2010-12-22,15000000,5.625,False,0,117.0,20529194,False,4.582024,country strong,Drama/Romance
+2011-09-30,1000000,3.75,True,0,129.0,34522221,False,7.666558,courageous,Drama
+2016-04-14,31500000,6.0,False,0,113.0,14708696,False,10.038581,criminal,Action
+2010-04-08,55000000,5.2,True,1,97.0,152263880,False,8.443736,date night,Comedy
+2010-02-04,25000000,3.875,False,0,115.0,114977104,False,8.371479,dear john,Drama/Romance/War
+2010-04-15,21000000,7.5,True,0,92.0,49050886,False,10.863441,death at a funeral,Comedy
+2014-05-02,2000000,5.722222222222222,False,0,91.0,48390,False,3.880541,decoding annie parker,Drama
+2016-09-29,110000000,6.939024390243903,True,1,107.0,121790373,False,13.1984,deepwater horizon,Drama/Action
+2010-07-08,69000000,7.416666666666667,True,1,95.0,543513985,False,22.274502,despicable me,Animation/Family
+2013-06-25,76000000,6.8,True,1,98.0,970761885,False,24.82355,despicable me 2,Animation/Comedy/Family
+2010-03-19,15000000,5.683333333333334,True,0,92.0,75700498,False,12.139919,diary of a wimpy kid,Comedy/Family
+2010-07-30,69000000,5.954411764705882,True,0,114.0,86387857,True,11.623718,dinner for schmucks,Comedy
+2011-09-23,37000000,6.770833333333333,True,0,113.0,95404397,False,6.695229,dolphin tale,Drama/Family
+2014-09-12,36000000,6.092105263157895,True,0,107.0,52424533,False,8.268684,dolphin tale 2,Family/Drama
+2014-10-01,70000000,4.5,True,1,92.0,215529201,False,16.316318,dracula untold,Horror/Action/Drama/Fantasy/War
+2014-04-11,25000000,5.339473684210526,False,0,109.0,28831145,False,5.596449,draft day,Drama
+2012-09-07,50000000,7.325,True,0,95.0,41037742,False,12.1524,dredd,Action/Science Fiction
+2016-02-26,23000000,6.348684210526316,True,0,106.0,46152411,False,7.528276,eddie the eagle,Comedy/Drama/History
+2010-01-29,80000000,6.391891891891892,True,0,117.0,74901339,False,9.554067,edge of darkness,Crime/Drama/Mystery/Thriller
+2012-09-20,7000000,6.788461538461538,False,1,109.0,48126384,True,7.45279,end of watch,Crime/Drama/Thriller
+2015-06-03,30000000,4.7,True,0,104.0,49263404,False,14.013413,entourage,Comedy
+2010-01-21,31000000,4.75,False,1,105.0,15134293,False,6.523155,extraordinary measures,Drama
+2016-11-16,180000000,7.258928571428571,True,0,133.0,809342332,False,41.051421,fantastic beasts and where to find them,Adventure/Family/Fantasy
+2015-08-05,120000000,5.333333333333333,True,0,100.0,167977596,False,17.246484,fantastic four,Action/Adventure/Science Fiction
+2011-04-20,125000000,5.666666666666667,True,1,130.0,626137675,False,1.420361,fast five,Action/Thriller/Crime
+2015-02-11,40000000,5.1,False,0,125.0,571006128,False,33.068431,fifty shades of grey,Drama/Romance/Thriller
+2011-08-12,47000000,5.922413793103448,True,0,92.0,157887643,False,12.912491,final destination 5,Horror/Mystery
+2016-06-16,200000000,7.78125,False,0,97.0,1028570889,False,14.477677,finding dory,Adventure/Animation/Comedy/Family
+2010-08-06,14000000,6.0,True,0,89.0,1755212,True,10.279685,flipped,Romance/Drama
+2011-10-06,24000000,6.125,True,0,113.0,63543328,False,6.162257,footloose,Drama/Music/Romance
+2010-10-01,3000000,5.733333333333333,True,0,93.0,103735,False,2.444847,freakonomics,Documentary
+2016-06-24,50000000,5.5131578947368425,False,0,139.0,25035950,False,10.223582,free state of jones,War/Action/Drama/History/Thriller
+2011-07-21,35000000,6.25,False,0,109.0,150483765,False,10.009007,friends with benefits,Romance/Comedy
+2010-02-05,52000000,4.9,True,1,92.0,52826594,False,6.885593,from paris with love,Action/Crime/Thriller
+2013-11-27,150000000,6.421052631578948,True,0,102.0,1274219009,False,24.248243,frozen,Animation/Adventure/Family
+2015-04-01,190000000,7.0,True,1,137.0,1506249360,False,27.275687,furious 7,Action
+2014-10-15,68000000,8.75,True,1,135.0,211817906,True,36.713807,fury,War/Drama/Action
+2015-03-26,40000000,5.0,True,0,100.0,111811453,False,8.178015,get hard,Comedy
+2010-06-04,40000000,6.631578947368421,True,0,109.0,90029656,False,7.33335,get him to the greek,Comedy
+2013-08-29,18000000,3.011111111111111,True,0,90.0,10501938,False,13.224288,getaway,Action/Crime
+2014-05-14,160000000,3.4166666666666665,True,0,123.0,529076069,False,14.019239,godzilla,Action/Science Fiction/Thriller
+2010-09-01,32000000,6.041666666666667,False,1,102.0,42045846,False,6.876053,going the distance,Comedy/Drama/Romance
+2014-10-01,61000000,8.248275862068965,True,0,145.0,369330363,True,154.801009,gone girl,Mystery/Thriller/Drama
+2011-06-16,200000000,4.5394736842105265,True,0,114.0,219851172,False,13.985631,green lantern,Adventure/Action/Thriller/Science Fiction
+2010-03-11,100000000,5.464285714285714,True,1,115.0,94882889,True,11.174041,green zone,War/Action/Adventure/Drama/Thriller
+2010-06-24,80000000,3.2857142857142856,True,1,102.0,271430189,False,23.981251,grown ups,Comedy
+2013-07-11,80000000,3.75,True,1,100.0,246984278,False,9.411725,grown ups 2,Comedy
+2014-07-30,170000000,7.993103448275861,True,0,121.0,773328629,False,53.291601,guardians of the galaxy,Action/Science Fiction/Adventure
+2016-10-07,40000000,7.5,False,0,140.0,175302354,True,21.037699,hacksaw ridge,Drama/History/War
+2011-02-25,36000000,4.87037037037037,True,1,105.0,83160734,False,9.13273,hall pass,Comedy
+2011-04-07,30000000,7.5,False,0,111.0,63782078,False,8.071196,hanna,Action/Thriller/Adventure
+2011-11-17,130000000,6.0625,True,0,100.0,150406466,False,9.141045,happy feet two,Animation/Comedy/Family
+2014-04-16,12000000,4.892857142857143,True,0,99.0,101332962,False,7.88371,heaven is for real,Drama
+2015-11-13,8900000,8.0,False,0,93.0,4100000,False,8.476315,heist,Crime/Action/Thriller
+2013-12-18,23000000,8.038888888888888,True,0,126.0,47351251,True,13.829515,her,Romance/Science Fiction/Drama
+2014-07-23,100000000,2.5,True,1,99.0,243400000,False,19.606895,hercules,Action/Adventure
+2010-10-15,50000000,6.828125,True,1,129.0,105197635,True,7.942766,hereafter,Drama/Fantasy
+2011-05-06,3000000,6.041666666666667,True,0,86.0,748453,False,10.926038,hobo with a shotgun,Action/Comedy/Thriller
+2015-03-18,135000000,6.59375,False,0,94.0,368871007,False,13.422713,home,Fantasy/Comedy/Animation/Science Fiction/Family
+2013-11-27,22000000,4.541666666666667,False,1,100.0,43058898,False,9.896704,homefront,Action/Thriller
+2011-07-08,35000000,6.630681818181818,True,0,98.0,117000000,False,9.856955,horrible bosses,Comedy/Crime
+2014-11-26,42000000,4.845454545454545,True,1,108.0,107670357,False,20.903362,horrible bosses 2,Comedy
+2015-05-08,35000000,4.0,True,0,87.0,51680201,False,6.90658,hot pursuit,Action/Comedy/Crime
+2010-03-26,36000000,6.4523809523809526,False,1,101.0,64572262,False,11.967652,hot tub time machine,Science Fiction/Comedy/Adventure
+2015-02-20,14000000,3.3482142857142856,True,0,93.0,12314651,False,6.575393,hot tub time machine 2,Comedy
+2012-09-20,85000000,5.4,True,1,91.0,358375603,False,16.231945,hotel transylvania,Animation/Comedy/Family/Fantasy
+2012-09-21,6900000,4.583333333333333,False,0,101.0,44287131,False,8.513457,house at the end of the street,Horror/Thriller
+2010-12-17,120000000,5.386363636363637,False,0,121.0,48668907,False,5.458387,how do you know,Comedy/Drama/Romance
+2014-06-12,145000000,7.1875,True,0,102.0,609123048,False,12.256689,how to train your dragon 2,Fantasy/Action/Adventure/Animation/Comedy/Family
+2010-08-26,30000,5.0,False,0,84.0,617000,False,5.416588,howl,Drama
+2011-11-22,170000000,8.5,True,0,126.0,185770160,True,14.046164,hugo,Adventure/Drama/Family
+2011-02-18,50000000,4.922413793103448,False,0,109.0,144492830,False,9.388376,i am number four,Action/Thriller/Science Fiction/Adventure
+2013-02-07,35000000,4.166666666666667,True,0,111.0,173965010,False,7.321172,identity thief,Comedy/Crime
+2014-08-21,11000000,5.6,True,0,106.0,78874843,False,9.659244,if i stay,Drama
+2011-12-23,10000000,5.861111111111111,False,0,127.0,303877,False,2.772269,in the land of blood and honey,Drama/Romance/War
+2011-10-27,40000000,5.428571428571429,True,0,109.0,173930596,False,10.324613,in time,Action/Thriller/Science Fiction
+2010-07-14,160000000,9.61111111111111,True,0,148.0,825532764,True,29.108149,inception,Action/Thriller/Science Fiction/Mystery/Adventure
+2014-12-25,20000000,7.465000000000001,True,0,148.0,11110975,True,13.52638,inherent vice,Comedy/Romance/Crime/Drama/Mystery
+2015-07-17,11000000,5.352941176470588,True,0,95.0,27391084,True,6.862812,irrational man,Mystery/Drama
+2012-12-20,60000000,7.140666666666666,True,1,130.0,218340595,False,12.789812,jack reacher,Crime/Drama/Thriller
+2013-02-27,195000000,7.35,True,0,114.0,197687603,True,11.606061,jack the giant slayer,Action/Family/Fantasy
+2016-07-27,120000000,5.920454545454546,True,1,123.0,415484914,True,19.133256,jason bourne,Action/Thriller
+2013-08-16,12000000,4.6891891891891895,False,1,128.0,35931410,False,14.294019,jobs,Drama/History
+2012-03-07,260000000,6.35,True,0,132.0,284139100,False,14.670353,john carter,Action/Adventure/Science Fiction
+2014-10-22,20000000,7.964285714285714,True,0,101.0,88761661,False,183.870374,john wick,Action/Thriller
+2010-06-18,47000000,3.7708333333333335,True,0,80.0,10539000,False,9.482806,jonah hex,Action/Western/Drama/Fantasy/Thriller
+2011-06-10,20000000,4.511904761904762,False,0,91.0,14166853,False,2.321394,judy moody and the not bummer summer,Comedy/Family
+2011-05-06,6600000,5.765625,True,0,112.0,37710610,False,2.664211,jumping the broom,Comedy
+2016-10-20,40000000,3.75,True,1,105.0,29918745,False,9.48515,keeping up with the joneses,Action/Comedy
+2016-01-23,145000000,6.0,False,0,95.0,521170825,False,14.696548,kung fu panda 3,Action/Adventure/Animation/Comedy/Family
+2016-11-29,30000000,8.825757575757576,False,0,128.0,445435700,False,19.681686,la la land,Comedy/Drama/Music/Romance
+2011-06-30,30000000,4.671875,True,0,98.0,36160375,False,10.778028,larry crowne,Comedy/Romance/Drama
+2010-10-01,20000000,7.7756410256410255,False,0,116.0,24145613,False,11.11946,let me in,Drama/Horror/Mystery
+2014-08-15,2400000,5.552380952380952,False,0,90.0,88273,False,5.486893,life after beth,Romance/Comedy/Horror
+2011-10-28,250000,6.888888888888889,True,0,90.0,3542353,False,8.002786,like crazy,Drama/Romance
+2010-12-21,100000000,5.0,True,0,98.0,310650585,False,9.73941,little fockers,Comedy/Romance
+2014-04-10,2000000,7.2,False,0,85.0,4635300,False,12.792394,locke,Drama/Thriller
+2013-12-24,40000000,5.5625,True,0,121.0,149295601,False,10.855502,lone survivor,Action/Drama/Thriller/War
+2012-09-26,30000000,8.34375,True,1,118.0,47042000,False,12.727269,looper,Action/Thriller/Science Fiction
+2013-08-08,10000000,5.444444444444445,False,1,92.0,1585582,False,6.383512,lovelace,Drama
+2010-09-01,20000000,5.0,True,0,105.0,31327899,False,7.120403,machete,Action/Comedy/Thriller
+2011-09-23,30000000,5.403846153846154,False,1,129.0,2527904,False,5.87767,machine gun preacher,Action/Thriller/Crime
+2014-07-25,16800000,6.505,True,0,97.0,51029361,True,6.626077,magic in the moonlight,Comedy/Drama/Romance
+2012-06-28,7000000,7.647058823529412,True,1,110.0,167221571,True,8.732425,magic mike,Drama/Comedy
+2015-07-01,14800000,6.245,True,1,115.0,122513057,False,8.76993,magic mike xxl,Comedy/Drama/Music
+2015-06-03,4000000,5.75,True,0,97.0,143101,False,4.69699,manglehorn,Drama
+2011-09-28,3500000,6.65,False,0,107.0,19504039,False,8.340757,margin call,Thriller/Drama
+2010-06-04,50000000,3.1375,True,1,87.0,83761844,False,12.285545,marmaduke,Family/Comedy
+2011-03-09,150000000,8.0,True,0,88.0,38992758,False,7.24717,mars needs moms,Adventure/Animation/Family
+2016-06-02,20000000,5.859375,True,0,110.0,207945075,False,34.34759,me before you,Drama/Romance
+2016-07-07,33000000,5.6499999999999995,True,0,98.0,77068246,False,12.237571,mike and dave need wedding dates,Comedy
+2014-05-09,25000000,5.0,True,0,124.0,38307627,False,9.453942,million dollar arm,Drama
+2016-03-16,16000000,6.709999999999999,True,0,117.0,73883359,False,7.528099,miracles from heaven,Drama
+2016-11-25,13000000,6.4772727272727275,False,0,132.0,3500605,False,14.017754,miss sloane,Drama/Thriller
+2011-09-22,50000000,7.828947368421052,True,1,133.0,110206216,False,15.785663,moneyball,Drama
+2013-06-20,200000000,6.9772727272727275,True,0,104.0,743559607,False,16.267502,monsters university,Animation/Family
+2014-03-20,50000000,6.7368421052631575,True,0,112.0,80383290,False,7.244956,muppets most wanted,Comedy/Adventure/Crime/Family
+2014-09-09,5000000,5.666666666666667,False,0,107.0,7527232,False,11.127162,my old lady,Romance/Comedy/Drama
+2014-03-13,66000000,4.819565217391305,True,0,130.0,203277636,False,18.271383,need for speed,Action/Crime/Drama/Thriller
+2014-10-23,8500000,8.211538461538462,False,0,117.0,38697217,False,21.277073,nightcrawler,Crime/Drama/Thriller
+2016-06-02,90000000,6.0,True,0,129.0,334901337,False,39.540653,now you see me 2,Action/Adventure/Comedy/Crime/Mystery/Thriller
+2013-11-14,30000000,7.8125,False,1,104.0,4861022,True,7.882353,oldboy,Drama/Thriller/Mystery/Action
+2010-03-12,14000000,4.055555555555555,True,0,103.0,21409028,False,8.204894,our family wedding,Comedy
+2011-08-26,10000000,6.631578947368421,False,1,90.0,17273593,False,5.918193,our idiot brother,Comedy/Drama
+2013-12-06,22000000,6.1,False,1,116.0,15400000,False,6.760321,out of the furnace,Thriller/Drama/Crime
+2010-10-20,3000000,8.0,True,0,91.0,177512032,False,7.388933,paranormal activity 2,Horror/Thriller
+2011-10-19,5000000,7.25,True,0,83.0,205703818,False,10.996308,paranormal activity 3,Horror
+2012-08-03,60000000,8.0,False,0,90.0,107139399,False,10.425038,paranorman,Family/Animation/Adventure/Comedy
+2015-09-16,19000000,6.333333333333333,False,0,115.0,5578519,False,7.399209,pawn sacrifice,Thriller/Drama
+2013-11-01,12000000,8.117647058823529,False,0,98.0,100129872,True,6.927182,philomena,Drama
+2012-09-28,17000000,6.5,True,0,112.0,115350426,False,11.03595,pitch perfect,Comedy/Music/Romance
+2015-05-07,29000000,7.666666666666667,True,0,115.0,287506194,False,15.862632,pitch perfect 2,Comedy/Music
+2013-08-09,50000000,4.553030303030303,True,0,91.0,219788712,False,11.604181,planes,Animation/Family/Adventure/Comedy
+2015-12-03,105000000,7.125,True,0,114.0,133718711,False,7.291872,point break,Action/Crime/Thriller
+2015-05-20,35000000,8.333333333333334,True,0,93.0,95437994,False,15.968492,poltergeist,Horror/Thriller
+2012-08-24,35000000,6.628205128205129,False,1,91.0,31083599,False,5.654784,premium rush,Crime/Action/Thriller
+2016-02-04,28000000,5.645833333333333,True,0,108.0,16374328,False,7.954623,pride and prejudice and zombies,Romance/Horror/Comedy/Thriller
+2015-01-29,12000000,6.083333333333333,True,0,106.0,32248241,False,9.363482,project almanac,Science Fiction/Thriller
+2012-03-01,12000000,5.0,True,0,88.0,100000000,False,9.803023,project x,Comedy/Crime
+2010-12-16,5000000,8.0,True,1,91.0,5129058,False,7.007993,rabbit hole,Drama
+2011-03-02,135000000,7.5,True,1,107.0,245724603,True,10.581925,rango,Animation/Comedy/Family/Western/Adventure
+2011-09-28,110000000,7.0,True,1,127.0,299268508,False,19.265552,real steel,Action/Science Fiction/Drama
+2010-10-13,58000000,7.0,False,1,111.0,71664962,True,12.595165,red,Action/Adventure/Comedy/Crime/Thriller
+2012-11-21,65000000,6.0,False,0,93.0,44806783,False,5.627787,red dawn,War/Action/Thriller/Science Fiction
+2010-03-12,16000000,4.654761904761905,False,1,113.0,56032889,False,8.307719,remember me,Drama/Romance
+2010-03-18,32000000,5.5,True,1,111.0,18409891,False,7.502967,repo men,Action/Science Fiction/Thriller/Crime
+2016-01-14,40000000,3.625,True,0,102.0,124827316,False,9.420931,ride along 2,Action/Comedy
+2011-04-03,90000000,7.0,True,1,96.0,484635760,False,10.403228,rio,Animation/Adventure/Comedy/Family
+2011-08-03,93000000,8.0,True,0,105.0,482860185,False,41.613762,rise of the planet of the apes,Thriller/Action/Drama/Science Fiction
+2015-10-22,15000000,4.081818181818182,False,1,100.0,3020664,True,10.394389,rock the kasbah,Comedy/Music/War
+2015-03-11,50000000,6.75,True,1,114.0,71561644,False,16.838145,run all night,Action/Crime/Drama/Mystery/Thriller
+2012-04-16,30000000,8.0,True,0,94.0,40346186,False,8.234382,safe,Action/Crime/Thriller
+2012-06-08,750000,7.6477272727272725,False,0,85.0,4007792,False,7.067494,safety not guaranteed,Comedy/Romance/Science Fiction/Drama
+2010-07-21,110000000,6.9375,True,0,100.0,293329073,False,8.704455,salt,Action/Mystery/Thriller
+2015-05-27,110000000,4.3,True,1,114.0,470490832,False,20.547925,san andreas,Action/Drama/Thriller
+2011-02-03,30000000,4.8625,True,0,108.0,108609310,False,7.000775,sanctum,Action/Thriller
+2011-01-07,40000000,3.608695652173913,False,1,95.0,88100000,False,13.471159,season of the witch,Adventure/Fantasy/Action
+2012-06-22,10000000,6.2411111111111115,False,1,101.0,9636289,False,6.947533,seeking a friend for the end of the world,Comedy/Drama/Romance/Science Fiction
+2014-12-25,20000000,8.971666666666666,True,0,127.0,66787908,True,7.107071,selma,History/Drama
+2010-05-26,100000000,4.625,True,1,146.0,288347692,False,7.255991,sex and the city 2,Comedy/Drama/Romance
+2010-05-16,165000000,7.0,True,0,93.0,752600867,False,11.803808,shrek forever after,Comedy/Adventure/Fantasy/Animation/Family
+2016-11-11,10000000,3.75,False,0,91.0,13082071,False,6.944457,shut in,Drama/Thriller
+2010-02-18,80000000,7.303571428571429,True,0,138.0,294804195,True,15.813629,shutter island,Drama/Thriller/Mystery
+2012-10-25,200000000,8.366666666666667,False,1,143.0,1108561013,True,20.309585,skyfall,Action/Adventure/Thriller
+2012-09-12,500000,7.7,True,0,85.0,376597,False,4.893812,smashed,Drama
+2011-07-15,134005,3.775,True,0,104.0,1332231,False,2.003832,snow flower and the secret fan,Drama/History
+2012-05-30,170000000,5.285714285714286,True,1,127.0,396600000,False,18.751554,snow white and the huntsman,Adventure/Fantasy/Drama
+2016-09-15,40000000,6.5,False,0,134.0,37279439,True,14.384554,snowden,Drama/Thriller
+2011-03-30,32000000,7.323529411764706,False,1,93.0,147332697,False,9.796962,source code,Thriller/Science Fiction/Mystery
+2012-08-17,14000000,4.0,True,0,116.0,24637469,False,2.24386,sparkle,Drama/Music
+2013-05-05,190000000,7.454545454545454,True,1,132.0,467365246,False,15.78129,star trek into darkness,Action/Adventure/Science Fiction
+2012-07-26,33000000,5.75,False,0,99.0,140470746,False,7.859968,step up revolution,Music/Drama/Romance
+2010-10-07,22000000,6.333333333333333,False,0,105.0,9479718,False,11.275132,stone,Drama
+2015-09-18,13500000,7.388888888888889,False,0,129.0,187674,False,3.531089,stonewall,Drama
+2016-09-22,70000000,6.1875,True,0,87.0,182379278,False,12.687521,storks,Adventure/Animation/Comedy/Family
+2015-08-13,28000000,7.529411764705882,True,0,147.0,201634991,False,21.183077,straight outta compton,Drama/Music
+2015-10-16,14000000,6.6022727272727275,False,0,106.0,16002420,False,8.093442,suffragette,Drama/History
+2016-09-07,60000000,6.675,True,1,96.0,238470033,True,18.275689,sully,Drama/History
+2011-06-08,50000000,7.982142857142857,True,0,112.0,260095987,False,19.529911,super 8,Thriller/Science Fiction/Mystery
+2011-03-04,19000000,5.0,False,0,97.0,6928068,False,8.132811,take me home tonight,Comedy/Drama/Romance
+2010-08-26,32000000,7.5,False,0,107.0,69055695,False,7.000421,takers,Action/Crime/Drama/Thriller
+2010-11-24,260000000,7.516666666666667,True,0,100.0,591794936,False,14.684761,tangled,Animation/Family
+2015-06-25,68000000,4.9904761904761905,True,1,115.0,217022588,False,42.061481,ted 2,Comedy
+2014-01-29,8000000,5.0,False,0,94.0,26049082,False,8.060403,that awkward moment,Comedy/Romance
+2010-08-31,20000000,6.25,False,1,104.0,65464324,False,7.275649,the american,Crime/Drama/Thriller
+2016-05-11,73000000,5.4,True,0,97.0,349779543,False,11.171927,the angry birds movie,Family/Animation
+2014-10-16,26000000,4.0,False,0,117.0,35926213,False,8.196975,the best of me,Drama/Romance
+2015-12-11,28000000,7.659375,True,1,130.0,133346506,False,13.143061,the big short,Comedy/Drama
+2011-10-13,41000000,5.5,True,0,100.0,7448385,False,10.267905,the big year,Comedy
+2010-01-14,80000000,5.291666666666667,True,1,118.0,157107755,False,14.39853,the book of eli,Action/Thriller/Science Fiction
+2012-08-08,130000000,6.035714285714286,True,1,120.0,276572938,False,14.89499,the bourne legacy,Action/Thriller
+2014-09-10,60000000,7.5,False,1,97.0,108255770,False,11.563909,the boxtrolls,Animation/Comedy/Family/Fantasy
+2016-01-22,10000000,3.0,False,0,97.0,64188367,False,17.028854,the boy,Horror/Mystery/Thriller
+2012-04-12,30000000,7.991935483870968,True,0,95.0,66486080,False,14.811958,the cabin in the woods,Horror/Thriller
+2016-02-04,10000000,4.0,True,0,111.0,18730891,False,8.28378,the choice,Drama/Romance
+2013-07-18,13000000,7.613636363636363,True,0,112.0,318000141,False,14.90169,the conjuring,Horror/Thriller
+2012-01-06,1000000,2.5714285714285716,True,0,83.0,101758490,False,5.747675,the devil inside,Thriller/Horror
+2015-08-07,2000000,7.9375,True,0,98.0,1477002,False,14.986654,the diary of a teenage girl,Drama/Romance
+2011-01-13,70000000,5.5,True,1,111.0,67112664,True,7.513067,the dilemma,Comedy/Drama
+2014-09-12,12600000,6.763888888888889,True,0,106.0,19054534,False,11.695036,the drop,Drama/Crime
+2015-02-20,8500000,5.822916666666667,True,0,100.0,43528634,False,8.592449,the duff,Romance/Comedy
+2016-11-18,9000000,7.975609756097561,False,0,104.0,18803648,False,9.51953,the edge of seventeen,Comedy/Drama
+2013-10-11,28000000,5.882608695652174,True,0,128.0,8555008,False,10.850442,the fifth estate,Drama/Thriller
+2011-12-14,90000000,7.841176470588236,True,0,158.0,232617430,True,8.907829,the girl with the dragon tattoo,Thriller/Crime/Mystery/Drama
+2015-11-14,175000000,9.0,False,0,93.0,331926147,False,12.319595,the good dinosaur,Adventure/Animation/Family
+2014-02-26,30000000,7.928571428571429,True,1,99.0,174600318,True,14.442048,the grand budapest hotel,Comedy/Drama
+2014-05-30,12700000,5.931818181818182,False,0,112.0,3430018,False,15.108283,the grand seduction,Comedy
+2012-12-19,40000000,5.616666666666666,True,0,95.0,41863726,False,7.479014,the guilt trip,Comedy
+2013-05-23,103000000,4.238888888888889,True,1,100.0,362000072,False,25.085639,the hangover part iii,Comedy
+2015-12-25,44000000,7.428787878787879,False,1,167.0,155760117,True,20.328822,the hateful eight,Crime/Drama/Mystery/Western
+2013-06-27,43000000,4.0,True,0,117.0,158674180,False,12.706403,the heat,Action/Comedy/Crime
+2011-08-09,25000000,7.5,False,0,146.0,124272124,False,7.486118,the help,Drama
+2016-08-25,3800000,5.568181818181818,True,0,105.0,1016985,False,5.723985,the hollars,Comedy/Drama
+2011-09-24,12500000,6.944444444444445,True,0,101.0,75993061,False,6.82647,the ides of march,Drama
+2014-11-14,14000000,7.537096774193548,False,0,113.0,233555708,False,31.59594,the imitation game,History/Drama/Thriller/War
+2013-03-14,30000000,5.217391304347826,True,1,100.0,27437881,False,9.385769,the incredible burt wonderstone,Comedy
+2016-07-13,25000000,6.680952380952381,False,0,127.0,15436808,False,11.504398,the infiltrator,Crime/Drama/Thriller
+2015-09-24,35000000,5.75,True,0,121.0,194564672,False,15.651705,the intern,Comedy
+2011-12-30,13000000,5.982758620689655,False,1,105.0,114956699,False,7.421245,the iron lady,History/Drama
+2015-11-13,6000000,7.107142857142857,True,0,104.0,41387687,False,5.799373,the lady in the van,Comedy/Drama
+2014-01-10,70000000,2.25,True,0,99.0,61279452,False,6.599539,the legend of hercules,Action/Adventure
+2014-02-06,60000000,8.152173913043478,True,0,100.0,469160692,False,16.418133,the lego movie,Adventure/Animation/Comedy/Family/Fantasy
+2016-09-02,20000000,6.2250000000000005,False,0,133.0,25956113,False,8.483245,the light between oceans,Drama
+2013-07-03,255000000,4.740384615384615,True,1,149.0,89289910,True,12.729104,the lone ranger,Action/Adventure/Western
+2015-04-09,34000000,5.3125,True,0,128.0,63013281,False,10.264416,the longest ride,Drama/Romance
+2012-11-02,15000000,5.861111111111111,True,0,96.0,15608545,False,8.310945,the man with the iron fists,Action
+2015-09-30,108000000,7.535483870967742,True,1,141.0,630161890,True,25.62993,the martian,Drama/Adventure/Science Fiction
+2014-09-10,34000000,4.0,True,0,113.0,348319861,False,76.93789,the maze runner,Action/Mystery/Science Fiction/Thriller
+2011-11-22,45000000,8.339285714285714,True,0,103.0,165184237,False,10.214369,the muppets,Comedy/Family/Music
+2011-03-18,4000000,7.424636363636363,False,0,105.0,253899,False,13.504065,the music never stopped,Drama
+2014-08-27,15000000,4.196428571428571,False,0,108.0,32556119,False,13.310556,the november man,Crime/Action/Thriller
+2015-11-05,99000000,6.5576923076923075,True,0,88.0,246233113,False,12.338346,the peanuts movie,Animation
+2012-09-20,13000000,6.6875,True,1,102.0,33400000,False,12.775679,the perks of being a wallflower,Drama/Romance
+2012-08-30,14000000,4.25,True,0,92.0,85446075,False,7.286477,the possession,Horror/Thriller
+2013-05-31,3000000,5.7,True,0,86.0,89328627,False,23.207663,the purge,Science Fiction/Horror/Thriller
+2010-03-19,10000000,6.881578947368421,False,1,106.0,2995811,False,19.42051,the runaways,Drama/Music
+2015-02-26,10000000,6.0,True,0,122.0,85978266,False,5.204474,the second best exotic marigold hotel,Drama/Comedy
+2013-07-30,105000000,3.5,True,0,105.0,347434178,False,10.640864,the smurfs 2,Fantasy/Family/Comedy/Animation
+2013-08-02,2500000,8.054166666666667,False,0,95.0,6854611,False,8.098964,the spectacular now,Comedy/Drama/Romance
+2013-07-24,1500000,6.25,False,0,104.0,3566225,False,7.081404,the to do list,Comedy/Romance
+2010-09-15,37000000,7.416666666666667,True,1,125.0,154026136,False,13.081203,the town,Crime/Drama/Thriller
+2013-06-06,4600000,7.4,True,1,103.0,23198652,False,10.342737,the way way back,Comedy/Drama
+2015-01-16,23000000,4.6875,True,0,101.0,79799880,False,12.21459,the wedding ringer,Comedy
+2012-09-07,6000000,4.955882352941177,False,1,96.0,13231461,False,6.089971,the words,Drama/Thriller
+2016-03-10,18500000,8.166666666666666,False,0,120.0,6490401,False,1.729199,the young messiah,Drama
+2012-04-16,12000000,8.75,True,0,122.0,96070507,False,5.264551,think like a man,Comedy/Romance
+2014-06-20,24000000,4.641304347826087,True,0,105.0,70181428,False,7.576924,think like a man too,Comedy/Romance
+2012-12-20,35000000,6.27,True,0,134.0,88058786,False,11.418802,this is 40,Comedy
+2013-06-12,32000000,7.051020408163265,True,0,107.0,126041322,False,11.414048,this is the end,Action/Comedy
+2014-09-10,19800000,5.533333333333332,True,1,103.0,41296320,False,11.313659,this is where i leave you,Drama/Comedy
+2012-02-14,65000000,5.428571428571429,True,0,103.0,156974557,False,12.366641,this means war,Action/Comedy/Romance
+2011-04-21,150000000,7.0,True,0,115.0,449326618,False,29.158489,thor,Adventure/Fantasy/Action
+2012-08-02,125000000,7.625,True,0,121.0,198802074,False,16.42635,total recall,Action/Science Fiction/Adventure/Thriller
+2011-11-02,75000000,5.3,True,1,104.0,152930623,False,7.762917,tower heist,Action/Comedy
+2010-06-16,200000000,10.0,True,1,103.0,1066969703,False,16.96647,toy story 3,Animation/Family/Comedy
+2015-07-17,35000000,7.279411764705882,True,0,125.0,140795793,False,17.310647,trainwreck,Comedy
+2016-02-19,20000000,6.96875,False,0,115.0,12639297,False,12.892504,triple 9,Action/Thriller
+2016-10-13,125000000,6.0,False,0,92.0,346864462,False,16.83711,trolls,Adventure/Animation/Family
+2010-12-22,38000000,7.25,True,0,110.0,252276927,True,10.730765,true grit,Drama/Adventure/Western
+2014-03-13,6000000,7.035714285714286,True,0,107.0,3485127,False,7.510159,veronica mars,Comedy/Drama/Crime
+2011-12-25,66000000,7.395205479452055,True,0,146.0,177584879,True,8.166363,war horse,Drama/War
+2015-08-28,3000000,7.25,True,0,120.0,67790117,False,5.384163,war room,Drama
+2013-01-31,35000000,6.416666666666667,True,0,97.0,116980662,False,10.430238,warm bodies,Horror/Comedy/Romance
+2011-09-09,25000000,7.583720930232559,True,0,140.0,23057115,False,13.121626,warrior,Action/Drama
+2011-12-22,50000000,6.4875,True,1,124.0,120081841,True,10.563152,we bought a zoo,Drama/Comedy/Family
+2011-09-22,8000,4.0,True,0,96.0,484592,False,4.727171,weekend,Drama/Romance
+2013-03-15,8500000,6.0625,True,0,99.0,9747,False,7.67857,welcome to the punch,Action/Adventure/Crime
+2014-08-22,15000000,4.891304347826087,True,0,115.0,30127963,False,6.617708,when the game stands tall,Drama
+2016-03-04,35000000,6.24375,True,0,112.0,23083334,False,8.155604,whiskey tango foxtrot,War/Comedy
+2013-06-27,150000000,5.703333333333333,True,1,131.0,205366737,False,9.920223,white house down,Action/Drama/Thriller
+2014-12-03,15000000,7.666666666666667,True,0,115.0,52501541,False,11.209154,wild,Drama
+2015-10-15,12000000,6.25,False,0,123.0,14394097,False,3.216606,woodlawn,Drama
+2010-09-24,20000000,4.339285714285714,False,1,105.0,32005248,False,12.820452,you again,Comedy/Romance
+2011-12-16,12000000,7.290517241379311,True,0,94.0,22939027,True,6.142913,young adult,Comedy/Drama
+2011-04-08,49900000,4.67741935483871,True,0,102.0,26121638,False,5.67375,your highness,Comedy
+2012-12-19,40000000,8.927941176470588,False,0,157.0,132820716,True,9.649303,zero dark thirty,Thriller/Drama/History
