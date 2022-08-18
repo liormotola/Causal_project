@@ -7,14 +7,22 @@ import warnings
 from pandas.core.common import SettingWithCopyWarning
 from sklearn.metrics import pairwise_distances
 from tqdm import tqdm
+
 warnings.simplefilter(action="ignore", category=SettingWithCopyWarning)
 
 
-def resample_bins(data, treatment):
+def resample_bins(data, treatment, n=None):
+    """
+    :param data: Dataframe
+    :param treatment:treatment column
+    :param n: The amount of samples from each bin
+    :return: Bootstrap data
+    """
     new_data = []
     for label in data[treatment].unique():
-        label_data = data[data[treatment] == label].reset_index(drop = True)
-        n = len(label_data)
+        label_data = data[data[treatment] == label].reset_index(drop=True)
+        if n is None:
+            n = len(label_data)
         bootstrap_indices = np.random.randint(n, size=n)
         label_bootstrap = label_data.iloc[bootstrap_indices]
         new_data.append(label_bootstrap)
@@ -22,7 +30,42 @@ def resample_bins(data, treatment):
     return new_data
 
 
-def preprocess(path, score_bins, get_dummies=True):
+def transform_score(score, bins):
+    """
+    :param score: numeric score
+    :param bins: bins bounds
+    :return: placement of score to bin
+    """
+    for index, bin_ in enumerate(bins):
+        if score >= bin_[0] and score <= bin_[1]:
+            return index
+
+
+def bin_review_score(data, num_of_bins=2):
+    """
+    :param data: Dataframe
+    :param num_of_bins: Number of bins
+    :return: Transforms the numeric column of review_score to a bin score
+    """
+    quantile = 1 / num_of_bins
+    bins = [(0, data['review_score'].quantile(quantile))]
+    for i in range(1, num_of_bins - 1):
+        bins.append(
+            (data['review_score'].quantile(quantile), data['review_score'].quantile(quantile + 1 / num_of_bins)))
+        quantile += 1 / num_of_bins
+    bins.append((data['review_score'].quantile(quantile), 10))
+    data['score'] = data['review_score'].apply(lambda score: transform_score(score, bins))
+    data = data.drop('review_score', axis=1)
+    return data
+
+
+def preprocess(path, num_of_bins, get_dummies=True):
+    """
+    :param path: Data path
+    :param num_of_bins: Number of bins
+    :param get_dummies: If do convert categorical data to dummies
+    :return: Processed dataframe
+    """
     data = pd.read_csv(path)
     data['release_date'] = pd.to_datetime(data['release_date'])
     data['month'] = data.apply(lambda row: row['release_date'].month, axis=1)
@@ -30,7 +73,7 @@ def preprocess(path, score_bins, get_dummies=True):
     data['release_date'] = pd.to_datetime(data['release_date'])
     data['revenue'] = np.log(data['revenue'])
     data['budget'] = np.log(data['budget'])
-    data = bin_review_score(data, score_bins)
+    data = bin_review_score(data, num_of_bins)
     if get_dummies:
         data = pd.get_dummies(data, columns=['month'])
         dummies = data['genres'].str.get_dummies(sep='/')
@@ -42,25 +85,16 @@ def preprocess(path, score_bins, get_dummies=True):
         return data
 
 
-def transform_score(score, bins):
-    for index, bin_ in enumerate(bins):
-        if score >= bin_[0] and score <= bin_[1]:
-            return index
-
-
-def bin_review_score(data, k=2):
-    quantile = 1 / k
-    bins = [(0, data['review_score'].quantile(quantile))]
-    for i in range(1, k - 1):
-        bins.append((data['review_score'].quantile(quantile), data['review_score'].quantile(quantile + 1 / k)))
-        quantile += 1 / k
-    bins.append((data['review_score'].quantile(quantile), 10))
-    data['score'] = data['review_score'].apply(lambda score: transform_score(score, bins))
-    data = data.drop('review_score', axis=1)
-    return data
-
-
 def create_data_frames(data, continuous_features, categorical_features, treatment, labels_combination, trim):
+    """
+    :param data: Dataframe
+    :param continuous_features:  Continuous features columns
+    :param categorical_features: Categorical features columns
+    :param treatment: Treatment column
+    :param labels_combination: Bins which the ATE is measured between
+    :param trim: To trim by propensity or not
+    :return: Dictionary which contains the relevant data for each bins combination given
+    """
     data_frames = pairwise_logistic_regression(data, continuous_features, categorical_features, treatment,
                                                labels_combination)
     if trim:
@@ -75,6 +109,14 @@ def create_data_frames(data, continuous_features, categorical_features, treatmen
 
 
 def pairwise_logistic_regression(data, continuous_features, categorical_features, treatment, labels_combinations):
+    """
+    :param data: D
+    :param continuous_features:
+    :param categorical_features:
+    :param treatment:
+    :param labels_combinations:
+    :return:
+    """
     data_frames = {}
     for label_pair in labels_combinations:
         label_1, label_2 = label_pair
@@ -92,6 +134,10 @@ def pairwise_logistic_regression(data, continuous_features, categorical_features
 
 
 def pairwise_trim_common_support(data, label_1, label_2):
+    """
+    :param data:  Data frame with the 2 labels
+    :return: Data trimmed by the propensity scores
+    """
     label_1_data = data[data['score'] == label_1]
     label_1_bounds = (
         label_1_data[f'propensity_class_{label_1}'].min(), label_1_data[f'propensity_class_{label_1}'].max())
@@ -106,6 +152,10 @@ def pairwise_trim_common_support(data, label_1, label_2):
 
 
 def plot_classes_propensity(data):
+    """
+    :param data: Dataframe
+    :return:None
+    """
     for label in data['score'].unique():
         label_movies_propensity = data[data['score'] == label][f'propensity_class_{label}']
         plt.hist(label_movies_propensity, bins=20, label=label, alpha=0.5)
@@ -117,6 +167,9 @@ def plot_classes_propensity(data):
 
 
 def add_interactions(data, treatment):
+    """
+    Adds interactions with the treatment
+    """
     for column in data.columns:
         if column in [treatment]:
             continue
@@ -125,6 +178,13 @@ def add_interactions(data, treatment):
 
 
 def generate_S_learner(data_frames, features, treatment, target):
+    """
+    :param data_frames: Dictionary with keys which are 2 labels and value which is the data of those 2 labels
+    :param features: Model features
+    :param treatment: Treatment column
+    :param target: Target column
+    :return: Models for each pair of labels in data_frames dictionary
+    """
     models = {}
     for labels_pair in data_frames.keys():
         data = data_frames[labels_pair]
@@ -137,6 +197,13 @@ def generate_S_learner(data_frames, features, treatment, target):
 
 
 def generate_T_learners(data_frames, features, treatment, target):
+    """
+    :param data_frames: Dictionary with keys which are 2 labels and value which is the data of those 2 labels
+    :param features: Model features
+    :param treatment: Treatment column
+    :param target: Target column
+    :return: Models for each pair of labels in data_frames dictionary
+    """
     models = {}
     for labels_pair in data_frames.keys():
         label_1, label_2 = labels_pair
@@ -154,6 +221,13 @@ def generate_T_learners(data_frames, features, treatment, target):
 
 
 def calc_all_ATE_T_learner(data_frames, features, treatment, target):
+    """
+    :param data_frames: Dictionary with keys which are 2 labels and value which is the data of those 2 labels
+    :param features: Model features
+    :param treatment: Treatment column
+    :param target: Target column
+    :return: ATE for each pair of labels in data_frames dictionary
+    """
     models = generate_T_learners(data_frames, features, treatment, target)
     ATES = {}
     for labels_pair in data_frames.keys():
@@ -169,6 +243,13 @@ def calc_all_ATE_T_learner(data_frames, features, treatment, target):
 
 
 def calc_all_ATE_S_learner(data_frames, features, treatment, target):
+    """
+    :param data_frames: Dictionary with keys which are 2 labels and value which is the data of those 2 labels
+    :param features: Model features
+    :param treatment: Treatment column
+    :param target: Target column
+    :return: ATE for each pair of labels in data_frames dictionary
+    """
     models = generate_S_learner(data_frames, features, treatment, target)
     ATES = {}
     for labels_pair in data_frames.keys():
@@ -188,16 +269,22 @@ def calc_all_ATE_S_learner(data_frames, features, treatment, target):
     return ATES
 
 
-def calculate_ATE_IPW(data_frames, target):
+def calculate_ATE_IPW(data_frames, treatment, target):
+    """
+    :param data_frames: Dictionary with keys which are 2 labels and value which is the data of those 2 labels
+    :param treatment:  Treatment column
+    :param target: Target column
+    :return: ATE for each pair of labels in data_frames dictionary
+    """
     ATES = {}
     for labels_pair in data_frames.keys():
         data = data_frames[labels_pair]
         ATE = 0
         label_1, label_2 = labels_pair
-        label_1_data = data[data['score'] == label_1]
+        label_1_data = data[data[treatment] == label_1]
         propensity_label_1 = label_1_data.pop(f'propensity_class_{label_1}')
         target_label_1 = label_1_data.pop(target)
-        label_2_data = data[data['score'] == label_2]
+        label_2_data = data[data[treatment] == label_2]
         target_label_2 = label_2_data.pop(f'propensity_class_{label_2}')
         n = len(data)
         ATE += 1 / n * sum(y / p for y, p in zip(target_label_1, propensity_label_1))
@@ -207,6 +294,12 @@ def calculate_ATE_IPW(data_frames, target):
 
 
 def continuous_distance(data_0, data_1, metric='euclidean'):
+    """
+    :param data_0: First dataframe
+    :param data_1: Second Dataframe
+    :param metric: Distance metric
+    :return: Pairwise distances between all the samples in the first dataframe to all the samples in the second dataframe
+    """
     scaler = MinMaxScaler()
     scaler.fit(np.vstack((data_0, data_1)))
     data_0 = scaler.transform(np.array(data_0))
@@ -216,6 +309,12 @@ def continuous_distance(data_0, data_1, metric='euclidean'):
 
 
 def categorical_distance(data_0, data_1, metric='hamming'):
+    """
+    :param data_0: First dataframe
+    :param data_1: Second Dataframe
+    :param metric: Distance metric
+    :return: Pairwise distances between all the samples in the first dataframe to all the samples in the second dataframe
+    """
     data_0 = np.array(data_0)
     data_1 = np.array(data_1)
     dist = pairwise_distances(data_0, data_1, metric=metric)
@@ -223,13 +322,25 @@ def categorical_distance(data_0, data_1, metric='hamming'):
 
 
 def create_dist(cat_dist, cont_dist):
+    """
+    :param cat_dist: Categorical distance
+    :param cont_dist: Continuous distance
+    :return: Element wise multiplication
+    """
     return np.multiply(cat_dist, cont_dist)
 
 
 def calc_ATE_from_ITE(pairs_label_1, pairs_label_2, y_1, y_2):
+    """
+    :param pairs_label_1: Each sample from the first label, and it's closest neighbor in the second label
+    :param pairs_label_2: Each sample from the second label, and it's closest neighbor in the first label
+    :param y_1: First label target
+    :param y_2: Second label target
+    :return: ATE
+    """
     n = len(y_1) + len(y_2)
-    total = sum(y_2[label_1] - y_1[label_2] for label_1, label_2 in pairs_label_1) / n
-    total += sum(y_1[label_1] - y_2[label_2] for label_1, label_2 in pairs_label_2) / n
+    total = sum(y_1[label_1] - y_2[label_2] for label_1, label_2 in pairs_label_1) / n
+    total += sum(y_1[label_1] - y_2[label_2] for label_2, label_1 in pairs_label_2) / n
     return total
 
 
@@ -247,8 +358,8 @@ def calculate_ATE_matching(data_frames, categorical_features, continuous_feature
         cont_dist = continuous_distance(continuous_data_label_1, continuous_data_label_2)
         cat_dist = categorical_distance(categorical_data_label_1, categorical_data_label_2)
         dist = create_dist(cat_dist, cont_dist)
-        pairs_for_label_1 = [(i, neighbor) for i, neighbor in enumerate(np.argmin(dist, axis=0))]
-        pairs_for_label_2 = [(i, neighbor) for i, neighbor in enumerate(np.argmin(dist, axis=1))]
+        pairs_for_label_1 = [(i, neighbor) for i, neighbor in enumerate(np.argmin(dist, axis=1))]
+        pairs_for_label_2 = [(i, neighbor) for i, neighbor in enumerate(np.argmin(dist, axis=0))]
         ATE = calc_ATE_from_ITE(pairs_for_label_1, pairs_for_label_2, target_label_1, target_label_2)
         ATES[labels_pair] = ATE
     return ATES
@@ -272,7 +383,7 @@ def main():
         if bootstrap:
             data = resample_bins(original_data.copy(deep=True), treatment='score')
         else:
-            data = original_data.copy(deep = True)
+            data = original_data.copy(deep=True)
         features = categorical_features + continuous_features + genres + months
         data_frames = create_data_frames(data=data.copy(deep=True), continuous_features=continuous_features,
                                          categorical_features=categorical_features + genres + months, treatment='score',
@@ -299,7 +410,7 @@ def main():
         data_frames = create_data_frames(data=data.copy(deep=True), continuous_features=continuous_features,
                                          categorical_features=categorical_features + genres + months, treatment='score',
                                          labels_combination=labels_combinations, trim=True)
-        ATES = calculate_ATE_IPW(data_frames=data_frames, target='ROI')
+        ATES = calculate_ATE_IPW(data_frames=data_frames, treatment='score', target='ROI')
         for key in ATES.keys():
             results_ipw[key].append(ATES[key])
     for learner in results.keys():
