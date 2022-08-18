@@ -260,15 +260,19 @@ def main():
     bins = 2
     original_data, genres, months = preprocess('processed_data.csv', bins, get_dummies=True)
     labels_combinations = [(1, 0)]
-    bootstrap = 100
+    bootstrap = True
+    bootstrap_iterations = 100
     results_s_learner = {k: [] for k in labels_combinations}
     results_t_learner = {k: [] for k in labels_combinations}
     results_ipw = {k: [] for k in labels_combinations}
     results_matching = {k: [] for k in labels_combinations}
     results = {'s_learner': results_s_learner, 't_learner': results_t_learner, 'ipw': results_ipw,
                'matching': results_matching}
-    for i in tqdm(range(bootstrap)):
-        data = resample_bins(original_data.copy(deep=True), treatment='score')
+    for i in tqdm(range(bootstrap_iterations)):
+        if bootstrap:
+            data = resample_bins(original_data.copy(deep=True), treatment='score')
+        else:
+            data = original_data.copy(deep = True)
         features = categorical_features + continuous_features + genres + months
         data_frames = create_data_frames(data=data.copy(deep=True), continuous_features=continuous_features,
                                          categorical_features=categorical_features + genres + months, treatment='score',
