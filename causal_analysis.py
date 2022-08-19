@@ -7,6 +7,7 @@ import warnings
 from pandas.core.common import SettingWithCopyWarning
 from sklearn.metrics import pairwise_distances
 from tqdm import tqdm
+from scipy.stats import norm
 
 warnings.simplefilter(action="ignore", category=SettingWithCopyWarning)
 
@@ -85,19 +86,19 @@ def preprocess(path, num_of_bins, get_dummies=True):
         return data
 
 
-def create_data_frames(data, continuous_features, categorical_features, treatment, labels_combination, trim):
+def create_data_frames(data, continuous_features, categorical_features, treatment, labels_combination, trim_by_propensity):
     """
     :param data: Dataframe
     :param continuous_features:  Continuous features columns
     :param categorical_features: Categorical features columns
     :param treatment: Treatment column
     :param labels_combination: Bins which the ATE is measured between
-    :param trim: To trim by propensity or not
+    :param trim_by_propensity: To trim by propensity or not
     :return: Dictionary which contains the relevant data for each bins combination given
     """
     data_frames = pairwise_logistic_regression(data, continuous_features, categorical_features, treatment,
                                                labels_combination)
-    if trim:
+    if trim_by_propensity:
         trimmed_data_frames = {}
         for labels_pair in data_frames.keys():
             label_1, label_2 = labels_pair
@@ -110,7 +111,7 @@ def create_data_frames(data, continuous_features, categorical_features, treatmen
 
 def pairwise_logistic_regression(data, continuous_features, categorical_features, treatment, labels_combinations):
     """
-    :param data: D
+    :param data: Dataframe
     :param continuous_features:
     :param categorical_features:
     :param treatment:
@@ -368,9 +369,9 @@ def calculate_ATE_matching(data_frames, categorical_features, continuous_feature
 def main():
     continuous_features = ['budget', 'runtime']
     categorical_features = ['is_top_production_company', 'known_actors', 'known_directors']
-    bins = 2
+    bins = 3
     original_data, genres, months = preprocess('processed_data.csv', bins, get_dummies=True)
-    labels_combinations = [(1, 0)]
+    labels_combinations = [(1, 0),(2,1)]
     bootstrap = True
     bootstrap_iterations = 100
     results_s_learner = {k: [] for k in labels_combinations}
@@ -387,20 +388,20 @@ def main():
         features = categorical_features + continuous_features + genres + months
         data_frames = create_data_frames(data=data.copy(deep=True), continuous_features=continuous_features,
                                          categorical_features=categorical_features + genres + months, treatment='score',
-                                         labels_combination=labels_combinations, trim=True)
+                                         labels_combination=labels_combinations, trim_by_propensity=True)
 
         ATES = calc_all_ATE_S_learner(data_frames=data_frames, features=features, treatment='score', target='ROI')
         for key in ATES.keys():
             results_s_learner[key].append(ATES[key])
         data_frames = create_data_frames(data=data.copy(deep=True), continuous_features=continuous_features,
                                          categorical_features=categorical_features + genres + months, treatment='score',
-                                         labels_combination=labels_combinations, trim=True)
+                                         labels_combination=labels_combinations, trim_by_propensity=True)
         ATES = calc_all_ATE_T_learner(data_frames=data_frames, features=features, treatment='score', target='ROI')
         for key in ATES.keys():
             results_t_learner[key].append(ATES[key])
         data_frames = create_data_frames(data=data.copy(deep=True), continuous_features=continuous_features,
                                          categorical_features=categorical_features + genres + months, treatment='score',
-                                         labels_combination=labels_combinations, trim=True)
+                                         labels_combination=labels_combinations, trim_by_propensity=True)
         ATES = calculate_ATE_matching(data_frames=data_frames,
                                       categorical_features=categorical_features + months + genres,
                                       continuous_features=continuous_features
@@ -409,7 +410,7 @@ def main():
             results_matching[key].append(ATES[key])
         data_frames = create_data_frames(data=data.copy(deep=True), continuous_features=continuous_features,
                                          categorical_features=categorical_features + genres + months, treatment='score',
-                                         labels_combination=labels_combinations, trim=True)
+                                         labels_combination=labels_combinations, trim_by_propensity=True)
         ATES = calculate_ATE_IPW(data_frames=data_frames, treatment='score', target='ROI')
         for key in ATES.keys():
             results_ipw[key].append(ATES[key])
@@ -419,7 +420,8 @@ def main():
             mean = results[learner][label_pair].mean()
             std = results[learner][label_pair].std()
             print(
-                f"The result for the learner {learner} and the labels pair of {label_pair} is [{mean - std},{mean + std}]")
+                f"The result for the learner {learner} and the labels pair of {label_pair} is [{mean - norm.ppf(0.975)*std},{mean + norm.ppf(0.975)*std}]"
+                f" with mean of {mean}")
 
 
 if __name__ == "__main__":
