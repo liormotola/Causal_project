@@ -8,8 +8,31 @@ from pandas.core.common import SettingWithCopyWarning
 from sklearn.metrics import pairwise_distances
 from tqdm import tqdm
 from scipy.stats import norm
+import argparse
 
 warnings.simplefilter(action="ignore", category=SettingWithCopyWarning)
+
+
+def args_parser():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--bins", type=int, default=2)
+    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--n", type=int, default=None)
+    parser.add_argument("--bootstrap_iterations", type=int, default=100)
+    parser.add_argument("--label_combinations", type=str, default="sequential")
+    parser.add_argument("--get_dummies", type=bool, default=True)
+    parser.add_argument("--bootstrap", type=bool, default=True)
+    args = parser.parse_args()
+    if args.label_combinations == 'sequential':
+        label_combinations = []
+        for i in range(args.bins - 1):
+            label_combinations.append((i + 1, i))
+        args.label_combinations = label_combinations
+    elif args.label_combinations == 'custom':
+        pass
+    else:
+        raise NotImplementedError
+    return args
 
 
 def resample_bins(data, treatment, n=None):
@@ -24,7 +47,7 @@ def resample_bins(data, treatment, n=None):
         label_data = data[data[treatment] == label].reset_index(drop=True)
         if n is None:
             n = len(label_data)
-        bootstrap_indices = np.random.randint(n, size=n)
+        bootstrap_indices = np.random.randint(len(label_data), size=n)
         label_bootstrap = label_data.iloc[bootstrap_indices]
         new_data.append(label_bootstrap)
     new_data = pd.concat(new_data)
@@ -86,7 +109,8 @@ def preprocess(path, num_of_bins, get_dummies=True):
         return data
 
 
-def create_data_frames(data, continuous_features, categorical_features, treatment, labels_combination, trim_by_propensity):
+def create_data_frames(data, continuous_features, categorical_features, treatment, labels_combination,
+                       trim_by_propensity):
     """
     :param data: Dataframe
     :param continuous_features:  Continuous features columns
@@ -366,14 +390,17 @@ def calculate_ATE_matching(data_frames, categorical_features, continuous_feature
     return ATES
 
 
-def main():
+def main(args):
     continuous_features = ['budget', 'runtime']
     categorical_features = ['is_top_production_company', 'known_actors', 'known_directors']
-    bins = 3
-    original_data, genres, months = preprocess('processed_data.csv', bins, get_dummies=True)
-    labels_combinations = [(1, 0),(2,1)]
-    bootstrap = True
-    bootstrap_iterations = 100
+    bins = args.bins
+    original_data, genres, months = preprocess('processed_data.csv', bins, get_dummies=args.get_dummies)
+    labels_combinations = args.label_combinations
+    n = args.n
+    seed = args.seed
+    np.random.seed(seed)
+    bootstrap = args.bootstrap
+    bootstrap_iterations = args.bootstrap_iterations
     results_s_learner = {k: [] for k in labels_combinations}
     results_t_learner = {k: [] for k in labels_combinations}
     results_ipw = {k: [] for k in labels_combinations}
@@ -382,7 +409,7 @@ def main():
                'matching': results_matching}
     for i in tqdm(range(bootstrap_iterations)):
         if bootstrap:
-            data = resample_bins(original_data.copy(deep=True), treatment='score')
+            data = resample_bins(original_data.copy(deep=True), treatment='score', n=n)
         else:
             data = original_data.copy(deep=True)
         features = categorical_features + continuous_features + genres + months
@@ -420,9 +447,10 @@ def main():
             mean = results[learner][label_pair].mean()
             std = results[learner][label_pair].std()
             print(
-                f"The result for the learner {learner} and the labels pair of {label_pair} is [{mean - norm.ppf(0.975)*std},{mean + norm.ppf(0.975)*std}]"
+                f"The result for the learner {learner} and the labels pair of {label_pair} is [{mean - norm.ppf(0.975) * std},{mean + norm.ppf(0.975) * std}]"
                 f" with mean of {mean}")
 
 
 if __name__ == "__main__":
-    main()
+    args = args_parser()
+    main(args)
