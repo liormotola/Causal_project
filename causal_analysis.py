@@ -152,8 +152,10 @@ def pairwise_logistic_regression(data, continuous_features, categorical_features
         model = LogisticRegression('none', max_iter=1000)
         model.fit(curr_data[continuous_features + categorical_features], curr_data[treatment])
         propensity_scores = model.predict_proba(curr_data[continuous_features + categorical_features])
-        curr_data[f'propensity_class_{label_1}'] = propensity_scores[:, 0]
-        curr_data[f'propensity_class_{label_2}'] = propensity_scores[:, 1]
+        # curr_data[f'propensity_class_{label_1}'] = propensity_scores[:, 0]
+        # curr_data[f'propensity_class_{label_2}'] = propensity_scores[:, 1]
+        curr_data[f'propensity_class_{label_1}'] = propensity_scores[:, 1]
+        curr_data[f'propensity_class_{label_2}'] = propensity_scores[:, 0]
         data_frames[(label_1, label_2)] = curr_data
     return data_frames
 
@@ -169,10 +171,13 @@ def pairwise_trim_common_support(data, label_1, label_2):
     label_2_data = data[data['score'] == label_2]
     label_2_bounds = (
         label_2_data[f'propensity_class_{label_2}'].min(), label_2_data[f'propensity_class_{label_2}'].max())
-    data = data[(data[f'propensity_class_{label_1}'] >= label_2_bounds[0]) & (
-            data[f'propensity_class_{label_1}'] <= label_2_bounds[1])
-                & (data[f'propensity_class_{label_2}'] >= label_1_bounds[0]) & (
-                        data[f'propensity_class_{label_2}'] <= label_1_bounds[1])]
+
+    group_min_max = data.groupby("score")[f'propensity_class_{label_1}']
+    min_propensity = max(group_min_max.min())
+    max_propensity = min(group_min_max.max())
+
+    data = data[(data[f'propensity_class_{label_1}'] >= min_propensity) & (
+            data[f'propensity_class_{label_1}'] <= max_propensity)]
     return data
 
 
@@ -182,7 +187,8 @@ def plot_classes_propensity(data):
     :return:None
     """
     for label in data['score'].unique():
-        label_movies_propensity = data[data['score'] == label][f'propensity_class_{label}']
+        # label_movies_propensity = data[data['score'] == label][f'propensity_class_{label}']
+        label_movies_propensity = data[data['score'] == label][f'propensity_class_{max(data["score"].unique())}']
         plt.hist(label_movies_propensity, bins=20, label=label, alpha=0.5)
     plt.legend()
     plt.xlabel('propensity score')
