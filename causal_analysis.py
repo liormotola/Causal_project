@@ -152,10 +152,7 @@ def pairwise_logistic_regression(data, continuous_features, categorical_features
         model = LogisticRegression('none', max_iter=1000)
         model.fit(curr_data[continuous_features + categorical_features], curr_data[treatment])
         propensity_scores = model.predict_proba(curr_data[continuous_features + categorical_features])
-        # curr_data[f'propensity_class_{label_1}'] = propensity_scores[:, 0]
-        # curr_data[f'propensity_class_{label_2}'] = propensity_scores[:, 1]
-        curr_data[f'propensity_class_{label_1}'] = propensity_scores[:, 1]
-        curr_data[f'propensity_class_{label_2}'] = propensity_scores[:, 0]
+        curr_data['propensity'] = propensity_scores[:, 1]
         data_frames[(label_1, label_2)] = curr_data
     return data_frames
 
@@ -165,19 +162,13 @@ def pairwise_trim_common_support(data, label_1, label_2):
     :param data:  Data frame with the 2 labels
     :return: Data trimmed by the propensity scores
     """
-    label_1_data = data[data['score'] == label_1]
-    label_1_bounds = (
-        label_1_data[f'propensity_class_{label_1}'].min(), label_1_data[f'propensity_class_{label_1}'].max())
-    label_2_data = data[data['score'] == label_2]
-    label_2_bounds = (
-        label_2_data[f'propensity_class_{label_2}'].min(), label_2_data[f'propensity_class_{label_2}'].max())
 
-    group_min_max = data.groupby("score")[f'propensity_class_{label_1}']
+    group_min_max = data.groupby("score")["propensity"]
     min_propensity = max(group_min_max.min())
     max_propensity = min(group_min_max.max())
 
-    data = data[(data[f'propensity_class_{label_1}'] >= min_propensity) & (
-            data[f'propensity_class_{label_1}'] <= max_propensity)]
+    data = data[(data["propensity"] >= min_propensity) & (
+            data["propensity"] <= max_propensity)]
     return data
 
 
@@ -187,8 +178,7 @@ def plot_classes_propensity(data):
     :return:None
     """
     for label in data['score'].unique():
-        # label_movies_propensity = data[data['score'] == label][f'propensity_class_{label}']
-        label_movies_propensity = data[data['score'] == label][f'propensity_class_{max(data["score"].unique())}']
+        label_movies_propensity = data[data['score'] == label]["propensity"]
         plt.hist(label_movies_propensity, bins=20, label=label, alpha=0.5)
     plt.legend()
     plt.xlabel('propensity score')
@@ -313,13 +303,14 @@ def calculate_ATE_IPW(data_frames, treatment, target):
         ATE = 0
         label_1, label_2 = labels_pair
         label_1_data = data[data[treatment] == label_1]
-        propensity_label_1 = label_1_data.pop(f'propensity_class_{label_1}')
+        propensity_label_1 = label_1_data.pop("propensity")
         target_label_1 = label_1_data.pop(target)
         label_2_data = data[data[treatment] == label_2]
-        target_label_2 = label_2_data.pop(f'propensity_class_{label_2}')
+        propensity_label_2 = label_2_data.pop("propensity")
+        target_label_2 = label_2_data.pop(target)
         n = len(data)
         ATE += 1 / n * sum(y / p for y, p in zip(target_label_1, propensity_label_1))
-        ATE -= 1 / n * sum(y / (1 - p) for y, p in zip(target_label_2, propensity_label_1))
+        ATE -= 1 / n * sum(y / (1 - p) for y, p in zip(target_label_2, propensity_label_2))
         ATES[labels_pair] = ATE
     return ATES
 
