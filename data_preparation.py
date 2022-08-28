@@ -20,7 +20,6 @@ def create_name(row):
 def create_critics_data(begin_data, end_date):
     critics_data = pd.read_csv('data/rotten_tomatoes_critic_reviews.csv')
     critics_data = critics_data.dropna()
-    # critics_data = critics_data[critics_data['top_critic'] == True]
     critics_data['review_date'] = pd.to_datetime(critics_data['review_date'], infer_datetime_format=True)
     critics_data = critics_data[
         (critics_data['review_date'] >= begin_data) & (critics_data['review_date'] <= end_date)]
@@ -138,19 +137,15 @@ def create_movies_data(begin_data, end_date):
     movies_data_rotten_tomatoes['production_company'] = movies_data_rotten_tomatoes['production_company'].apply(
         lambda row: row.lower())
     movies_data_rotten_tomatoes = find_top_k_companies_in_data_and_transform(movies_data_rotten_tomatoes)
-    # movies_data_rotten_tomatoes['is_top_production_company'] = movies_data_rotten_tomatoes.apply(
-    #     lambda row: True if row['production_company'] in top_production_companies else False, axis=1)
     movies_data_rotten_tomatoes['title'] = movies_data_rotten_tomatoes['movie_title'].apply(str.lower)
     movies_data_rotten_tomatoes = movies_data_rotten_tomatoes.drop(['movie_title'], axis=1)
 
-    # movies_data_rotten_tomatoes = movies_data_rotten_tomatoes.drop(['original_release_date'], axis=1)
     data = pd.merge(movies_data_imdb, movies_data_rotten_tomatoes, on=['title'])
     data['diff'] = data['original_release_date'] - data['release_date']
     data['diff'] = data['diff'].apply(lambda x: abs(x.days))
     data = data[data['diff'] <= 31]
     data['release_date'] = data.apply(lambda row: min(row['original_release_date'], row['release_date']), axis=1)
     data = data.drop(['original_release_date','diff'], axis=1)
-    #data, genres_cols = convert_col_to_dummies(data=data, col='genres')
     data['genres'] = transform_genres(data['genres'])
     return data
 

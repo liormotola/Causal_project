@@ -446,7 +446,7 @@ def main(args):
             print(
                 f"The result for the learner {learner} and the labels pair of {label_pair} is [{mean - norm.ppf(0.975) * std},{mean + norm.ppf(0.975) * std}]"
                 f" with mean of {mean}")
-
+            print(f"The p value is {(1-norm.cdf(mean/std))*2:.4f}")
 
 if __name__ == "__main__":
     args = args_parser()

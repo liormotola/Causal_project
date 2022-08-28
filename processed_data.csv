@@ -104,7 +104,7 @@ release_date,budget,review_score,is_top_production_company,known_actors,runtime,
 2010-03-11,100000000,5.464285714285714,True,1,115.0,94882889,True,11.174041,green zone,War/Action/Adventure/Drama/Thriller
 2010-06-24,80000000,3.2857142857142856,True,1,102.0,271430189,False,23.981251,grown ups,Comedy
 2013-07-11,80000000,3.75,True,1,100.0,246984278,False,9.411725,grown ups 2,Comedy
-2014-07-30,170000000,7.993103448275861,True,0,121.0,773328629,False,53.291601,guardians of the galaxy,Action/Science Fiction/Adventure
+2014-07-30,170000000,7.993103448275862,True,0,121.0,773328629,False,53.291601,guardians of the galaxy,Action/Science Fiction/Adventure
 2016-10-07,40000000,7.5,False,0,140.0,175302354,True,21.037699,hacksaw ridge,Drama/History/War
 2011-02-25,36000000,4.87037037037037,True,1,105.0,83160734,False,9.13273,hall pass,Comedy
 2011-04-07,30000000,7.5,False,0,111.0,63782078,False,8.071196,hanna,Action/Thriller/Adventure
@@ -175,7 +175,7 @@ release_date,budget,review_score,is_top_production_company,known_actors,runtime,
 2013-06-20,200000000,6.9772727272727275,True,0,104.0,743559607,False,16.267502,monsters university,Animation/Family
 2014-03-20,50000000,6.7368421052631575,True,0,112.0,80383290,False,7.244956,muppets most wanted,Comedy/Adventure/Crime/Family
 2014-09-09,5000000,5.666666666666667,False,0,107.0,7527232,False,11.127162,my old lady,Romance/Comedy/Drama
-2014-03-13,66000000,4.819565217391305,True,0,130.0,203277636,False,18.271383,need for speed,Action/Crime/Drama/Thriller
+2014-03-13,66000000,4.819565217391304,True,0,130.0,203277636,False,18.271383,need for speed,Action/Crime/Drama/Thriller
 2014-10-23,8500000,8.211538461538462,False,0,117.0,38697217,False,21.277073,nightcrawler,Crime/Drama/Thriller
 2016-06-02,90000000,6.0,True,0,129.0,334901337,False,39.540653,now you see me 2,Action/Adventure/Comedy/Crime/Mystery/Thriller
 2013-11-14,30000000,7.8125,False,1,104.0,4861022,True,7.882353,oldboy,Drama/Thriller/Mystery/Action
@@ -306,7 +306,7 @@ release_date,budget,review_score,is_top_production_company,known_actors,runtime,
 2014-06-20,24000000,4.641304347826087,True,0,105.0,70181428,False,7.576924,think like a man too,Comedy/Romance
 2012-12-20,35000000,6.27,True,0,134.0,88058786,False,11.418802,this is 40,Comedy
 2013-06-12,32000000,7.051020408163265,True,0,107.0,126041322,False,11.414048,this is the end,Action/Comedy
-2014-09-10,19800000,5.533333333333332,True,1,103.0,41296320,False,11.313659,this is where i leave you,Drama/Comedy
+2014-09-10,19800000,5.533333333333334,True,1,103.0,41296320,False,11.313659,this is where i leave you,Drama/Comedy
 2012-02-14,65000000,5.428571428571429,True,0,103.0,156974557,False,12.366641,this means war,Action/Comedy/Romance
 2011-04-21,150000000,7.0,True,0,115.0,449326618,False,29.158489,thor,Adventure/Fantasy/Action
 2012-08-02,125000000,7.625,True,0,121.0,198802074,False,16.42635,total recall,Action/Science Fiction/Adventure/Thriller
