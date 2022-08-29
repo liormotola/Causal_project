@@ -177,7 +177,7 @@ def plot_classes_propensity(data):
     :param data: Dataframe
     :return:None
     """
-    for label in data['score'].unique():
+    for label in sorted(data['score'].unique()):
         label_movies_propensity = data[data['score'] == label]["propensity"]
         plt.hist(label_movies_propensity, bins=20, label=label, alpha=0.5)
     plt.legend()
